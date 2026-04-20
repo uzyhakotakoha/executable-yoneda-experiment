@@ -2,33 +2,30 @@
 
 **AI-assisted Formalization Experiment of Yoneda Reconstruction in Cubical Agda**
 
-This repository contains the experimental artifact created through collaboration between a human and three LLMs (ChatGPT, Grok, Claude).
+このリポジトリは、ChatGPT・Grok・Claudeの3機種と人間が協力して作成した**実験的artifact**です。
 
-### Purpose
-To explore how AI can assist in making classical categorical concepts (Yoneda lemma) executable in Cubical Agda, with focus on reconstruction and normalization-based rewriting.
+### 目的
+Yoneda補題の「観察から対象を再構築する」という概念を、Cubical Agdaで実行可能（executable）にする試み。  
+理論の話で終わらせず、実際に動くコードとして実装することを目指しました。
 
-### Features
-- Executable Yoneda reconstruction (`reconstruct`)
-- Simple arithmetic expression optimizer with rewrite tracing
-- Observational equivalence experiments
+### 含まれる内容
+- `OGS.Core`：Executable Yoneda reconstruction（reconstruct / embed）
+- `OGS.Optimizer`：簡単な数式最適化器（+0, *1, *0 の除去）
+- Rewrite Trace機能（簡易版）
+- デモファイル
 
-### Important Note
-This is **an experimental demonstration**, not a fully verified formalization.  
-The optimizer is heuristic. Soundness is only partially proven.
+### 重要なお知らせ
+これは**完全検証済みの形式化ではありません**。  
+最適化器はheuristic（経験則）デモです。正しさ証明は一部のケースに留まっています。詳細はnote記事を参照してください。
 
 ### Related Article
-[note.com - ChatGPT・Grok・Claudeと共同で作った Executable Yoneda の実験記録](https://note.com/alert_sheep1149/n/neeb3f09def2c)
+[note.com記事](https://note.com/alert_sheep1149/n/neeb3f09def2c)
 
 ### Requirements
-- Agda 2.6.4 or later
+- Agda 2.6.4 以上
 - `cubical` library
 
-### How to Build & Test
+### Build & Test
 ```bash
-# Clone this repository
-git clone https://github.com/uzyhakotakoha/executable-yoneda-experiment.git
-cd executable-yoneda-experiment
-
-# Build main files
 agda src/OGS-Optimizer.agda
 agda examples/Demo-Optimizer.agda
