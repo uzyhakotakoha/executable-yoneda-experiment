@@ -1,0 +1,4 @@
+name: executable-yoneda
+depend:
+  cubical
+include: src
